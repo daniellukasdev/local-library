@@ -37,11 +37,7 @@ function getMostCommonGenres(books) {
   // return an array with five or fewer objects (slice)
   // each object has a key and a count
   let count = books.reduce((acc, {genre}) => {
-    if (acc[genre]) {
-      acc[genre] += 1
-    } else {
-      acc[genre] = 1
-    }
+    (acc[genre]) ? acc[genre] += 1 : acc[genre] = 1;
     return acc;
   }, {})
   const sortedGenres = _objectSortedValues(count);
